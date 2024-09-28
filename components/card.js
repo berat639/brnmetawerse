@@ -3,6 +3,8 @@ import Link from "next/link"
 import NextImage from "./image"
 
 const Card = ({ article }) => {
+
+  console.log("aaaaaaaaaaa",article)
   return (
     <Link href={`/article/${article.slug}`}>
       <a className="uk-link-reset">
@@ -12,7 +14,7 @@ const Card = ({ article }) => {
           </div>
           <div className="uk-card-body">
             <p id="category" className="uk-text-uppercase">
-              {article.category.name}
+              
             </p>
             <p id="title" className="uk-text-large">
               {article.title}

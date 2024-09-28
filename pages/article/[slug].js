@@ -40,10 +40,10 @@ const Article = ({ article, categories }) => {
             </div>
             <div className="uk-width-expand">
               <p className="uk-margin-remove-bottom">
-                By {article.author.name}
+                By  {article.author.name}
               </p>
               <p className="uk-text-meta uk-margin-remove-top">
-                <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+               
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const articles = await fetchAPI(`/articles?slug=${params.slug}`)
   const categories = await fetchAPI("/categories")
-
+  console.log(categories);
   return {
     props: { article: articles[0], categories },
     revalidate: 1,
